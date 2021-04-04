@@ -7,12 +7,14 @@ networks:
 services:
  seleniumhub:
   image: selenium/hub
+  restart: always
   ports:
     - "4444:4444"
   networks:
     - prodnetwork
  chrome:
   image: selenium/node-chrome-debug
+  restart: always
   ports:
     - "5900:5900"
   depends_on:
